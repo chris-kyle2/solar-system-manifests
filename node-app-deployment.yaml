@@ -20,7 +20,7 @@ spec:
           image: busybox
           command: ['sh', '-c', 'until wget -qO- mongodb-service:27017; do echo waiting for MongoDB; sleep 5; done;']
         - name: init-db
-          image: 22monk/solar-system-app:a8dc8ddfd66b910544d70d1b1f9771226f8fe084
+          image: 22monk/solar-system-app:03e620353a5c492581f290ed10e47af337428595
           command: ["node", "/usr/app/initDB.js"]
           env:
             - name: MONGO_URI
@@ -30,7 +30,7 @@ spec:
                   key: MONGO_URI
       containers:
         - name: node-app
-          image: 22monk/solar-system-app:a8dc8ddfd66b910544d70d1b1f9771226f8fe084
+          image: 22monk/solar-system-app:03e620353a5c492581f290ed10e47af337428595
           ports:
             - containerPort: 3000
           env:
